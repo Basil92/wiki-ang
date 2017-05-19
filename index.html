@@ -21,9 +21,9 @@
         <form name="wikiForm">
             <h1>Wikipedia Search</h1>
             <label>
-                <input type="text" id="word-in-form" ng-model="key_word" ng-change="searching(key_word)" required >
+                <input type="text" id="word-in-form" ng-model="keyword" ng-change="searching(keyword)" required >
             </label>
-            <button ng-click="searching(key_word)" ng-disabled="wikiForm.$invalid">Go</button>
+            <button ng-click="searching(keyword)" ng-disabled="wikiForm.$invalid">Go</button>
         </form>
         <div class="random"><a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Click here for a random page</a></div>
         <div class="preloader loading dots2" ng-hide="items"></div>
