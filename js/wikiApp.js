@@ -18,10 +18,10 @@ wikiApp.config(function($sceDelegateProvider) {
 });
 wikiApp.controller('MainCtrl', ['$scope', '$http', '$sce', function($scope, $http, $sce){
     $scope.items = true;
-    $scope.searching = function (key_word) {
+    $scope.searching = function (keyword) {
         $scope.items = "";
-        var standartStart = 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=';
-        var target = standartStart + key_word;
+        var urlStart = 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=';
+        var target = urlStart + keyword;
         $http.jsonp(target, {jsonpCallbackParam: 'callback'}).then(function successCB(response) {
             // console.log(response.data.query.pages);
             $scope.items = [];
